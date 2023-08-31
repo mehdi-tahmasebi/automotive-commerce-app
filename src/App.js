@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import { NavBar, Search, NumResults, CarsList, Main } from "./components";
+import { NavBar, Search, NumResults, CarsList } from "./components";
 
 export default function App() {
   const [cars, setCars] = useState([]);
@@ -39,7 +39,7 @@ export default function App() {
         <NumResults cars={filteredCars} isSearched={isSearched} />
       </NavBar>
 
-      <Main>{isSearched && <CarsList cars={filteredCars} />}</Main>
+      {isSearched && <CarsList cars={filteredCars} />}
     </>
   );
 }
